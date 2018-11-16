@@ -3,10 +3,10 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.yeapps.pharma110"
+        id        = "com.yeapps.pharma1101"
         version   = "4.0.20">
 
-    <name>M-Reporting10</name>
+    <name>M-Reporting10A</name>
 
     <description>
        M-Reporting
