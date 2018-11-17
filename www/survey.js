@@ -4080,6 +4080,12 @@ function marketNext() {
 		}			
 }
 function marketNext_sup() {
+	localStorage.path_value_report='http://w03.yeapps.com/skfah/order_invoice_custom_mobile/'
+				var linkPath="window.open('"+localStorage.path_value_report+"index?"+"cid="+localStorage.cid+"&rep_id="+localStorage.user_id+"&rep_pass="+localStorage.user_pass	+"', '_system');"
+			var tour_combo='<a style="font-size:14px;" onclick="'+linkPath+'">Approve Customize Order</a>';
+			$('#order_invoice_approve').empty()
+			$('#order_invoice_approve').append(tour_combo)
+			
 	$("#unscheduled_m_client_combo_id").val('');
 	
 	market_name=$("#unschedule_market_combo_id").val();
