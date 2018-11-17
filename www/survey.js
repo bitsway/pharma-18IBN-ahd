@@ -1528,8 +1528,8 @@ function check_user() {
 
 
 
-  // var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
- var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+   var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+// var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  //alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
 	
 	var user_id=$("#user_id").val();
@@ -1537,7 +1537,7 @@ function check_user() {
 	
 	user_id=$.trim(user_id);
 	
-	
+	//alert (apipath_base_photo_dm)
 		//-----
 	
 	if (user_id=="" || user_id==undefined || user_pass=="" || user_pass==undefined){
@@ -1559,7 +1559,8 @@ function check_user() {
 			error: function(xhr) {
 			$("#wait_image_login").hide();
 			$("#loginButton").show();
-			$("#error_login").html('Network Timeout. Please check your Internet connection..1');
+			//alert (xhr)
+			$("#error_login").html('Network Timeout. Please check your Internet connection..1aa');
 													},
 			success:function(data, status,xhr){
 		//$.post(apipath_base_photo_dm,{ },
@@ -1570,6 +1571,7 @@ function check_user() {
 				
 				var dtaStr=data.replace('<start>','').replace('<end>','')
 				var resultArray = dtaStr.split('<fd>');		
+				
 					if(resultArray.length>3){
 						var base_url=resultArray[0];
 						var photo_url=resultArray[1];
@@ -3965,6 +3967,14 @@ function marketNextLV(lvalue) {
 function marketNext() {
 	$("#unscheduled_m_client_combo_id").val('');
 	
+	
+	localStorage.path_value_report='http://w03.yeapps.com/skfah/order_invoice_custom_mobile/'
+				var linkPath="window.open('"+localStorage.path_value_report+"index?"+"cid="+localStorage.cid+"&rep_id="+localStorage.user_id+"&rep_pass="+localStorage.user_pass	+"', '_system');"
+			var tour_combo='<a style="font-size:14px;" onclick="'+linkPath+'">&nbsp;&nbsp;&nbsp;Approve Customize Order</a>';
+			$('#order_invoice_approve').empty()
+			$('#order_invoice_approve').append(tour_combo)
+			//alert (linkPath)
+			
 	market_name=$("#unschedule_market_combo_id").val();
 	
 	if(market_name=='' || market_name==0){
@@ -4237,13 +4247,23 @@ function marketRetailerNext() {
 			$("#err_m_retailer_next").text("Retailer required");
 		}else{
 			//$("#btn_unschedule_market_ret").hide();
-//			$("#wait_image_unschedule_market_ret").show();		
+//			$("#wait_image_unschedule_market_ret").show();	
+			
+			
 			visitClientId_list=visit_client.split('|')
 			var visitClientId=visit_client.replace(visitClientId_list[0]+"|","");
 			
 			var visitClientID=visit_client.split('|')[1];
 			
+		localStorage.path_value_report='http://w03.yeapps.com/skfah/order_invoice_custom_mobile/'
+		var linkPath="window.open('"+localStorage.path_value_report+"index?"+"cid="+localStorage.cid+"&rep_id="+localStorage.user_id+"&rep_pass="+localStorage.user_pass	+"&custID="+visitClientID+"', '_system');"
+		
 			
+
+
+			var tour_combo='<a style="font-size:14px;" onclick="'+linkPath+'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customize Order</a>';
+			$('#order_invoice_custom_mobile').empty();
+			$('#order_invoice_custom_mobile').append(tour_combo);	
 			
 			if (localStorage.visit_client !=visitClientID ){
 				cancel_cart();
@@ -5189,7 +5209,8 @@ function marketNext_doc() {
 				$.afui.loadContent("#page_market_ret",true,true,'right');
 				unscheduled_m_client_combo_ob.listview("refresh");
 			}else{					
-
+				
+			
 				//-----------------------------------
 					if ((doc_result== undefined) || (doc_result== 'undefined')){
 						$("#err_market_next").text("Doctor not available");	

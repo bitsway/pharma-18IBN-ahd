@@ -412,6 +412,8 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                <div  onClick="chemist_add()" align="center"> <img style="height:70px; width:70px" src="add.png"></div>
                 </br></br>
                  <div  align="center" onClick="chemist_pending()"> <img style="height:150px; width:150px" src="PendingCustomerApproval.png"></div>
+                 </br></br>
+                 <div id="order_invoice_approve" style="color:#005E8A"> </div>
             </div>
         </nav>
         
@@ -822,6 +824,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
              <div onClick="page_businessVolume()" align="center"> <img style="height:80px; width:150px" src="BusinessVolume.png"></div>
 			 
              <div onClick="page_chemist_cancel()" align="center"> <img style="height:100px; width:150px" src="inactive.png"></div>
+             <div id="order_invoice_custom_mobile" style="color:#005E8A"> </div>
            
         </nav>
 
@@ -4979,14 +4982,15 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                 <div style="font-size:18px"><b>Market :</b><span class="market" ></span></div>
                	<div  style="font-size:18px"><b>Doctor :</b><span class="visit_client" style="font-weight:bold"></span></div>
 					<br>
-                    Doctor Catagory:
-                           <select name="medicine_3" id="medicine_3" >
+                    <input type="hidden" id="medicine_3"  name="medicine_3"  />
+                    <!--Doctor Catagory:-->
+                           <!--<select name="medicine_3" id="medicine_3" >
                              <option value=""></option>
                              <option value="NS">NS</option>
                              <option value="S">S</option>
                              <option value="M">M</option>
                              <option value="O">O</option>
-                           </select>
+                           </select>-->
 					<br><br>
                      <input type="hidden" id="errorShow"  name="errorShow"  style="width:100%; height:200px;"/>
 				<div  id="btn_prescription_submit">
@@ -5252,4 +5256,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>
+</html>>>>>>>
