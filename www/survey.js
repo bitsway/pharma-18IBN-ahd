@@ -1858,7 +1858,7 @@ function check_user() {
 													
 													
 													//Nazma Azam 2019-06-18 start
-											
+													//alert (unscheduleFarmComb_tr)
 													localStorage.visit_plan_farmlist_combo_tr=unscheduleFarmComb_tr;
 													$('#farm_combo_id_lv_tr').empty();
 													$('#farm_combo_id_lv_tr').append(localStorage.visit_plan_farmlist_combo_tr);	
@@ -13668,6 +13668,7 @@ $('#ThumbnailTest_buttonTakePhotosNow').click(function(){
   //Nazma Azam 2019-06-18 start
 function page_farm_link() {
 	//localStorage.farm_combo_val_tr=''
+	$("#wait_img_farm").hide();
 	$.afui.loadContent("#farm_Page",true,true,'right');
 }
 
@@ -13691,7 +13692,9 @@ function poultry_next_page() {
 	$('#tr_poultry').append(farm_combo_area_list_p);
 
 	$('#error_poultry_add_page').html('');
-
+	
+	$('#wait_image_poultry').hide();
+	
 	$.afui.loadContent("#poultry_page",true,true,'right');
 }
 
@@ -13720,6 +13723,7 @@ $('#tr_cattle').empty();
 $('#tr_cattle').append(farm_combo_area_list_c);
 
 // ===============2019-02-01 end novivo2019 end ================
+	$('#wait_image_cattle').hide();
 	
 	$.afui.loadContent("#cattle_page",true,true,'right');
 }
@@ -13748,6 +13752,8 @@ function aqua_next_page() {
 	$('#tr_aqua').append(farm_combo_area_list_a);
 
   // ===============2019-02-01 novivo2019 end ================
+  	//alert ('aa')
+	$('#wait_image_aqua').hide();
 	$.afui.loadContent("#aqua_page",true,true,'right');
 }
 
