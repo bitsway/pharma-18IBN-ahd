@@ -14217,6 +14217,167 @@ function aqua_submit() {
 	
 }
 
+//Nazma Azam 2019-06-23 start
+
+//==============Farm Edit===========
+function page_farm_profile(getData) {
+	//alert(getData)
+	localStorage.visit_farm_route=getData
+	$("#myerror_doctor_prof").html('' )
+	$("#wait_image_docProf").show();
+	var farm_Id=localStorage.visit_farm_route.split('|')[1];
+	var farm_name=localStorage.visit_farm_route.split('|')[0]
+	
+
+	//alert (localStorage.report_url+'farm_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&farm_Id='+farm_Id+'&farm_combo_val_tr='+localStorage.farm_combo_val_tr)
+		$.ajax(localStorage.report_url+'farm_info?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&farm_Id='+farm_Id+'&farm_combo_val_tr='+localStorage.farm_combo_val_tr,{
+
+								type: 'POST',
+								timeout: 30000,
+								error: function(xhr) {
+								 $("#wait_image_docProf").hide();
+								 $("#myerror_doctor_prof").html('Network Timeout. Please check your Internet connection..');
+													},
+								success:function(data, status,xhr){	
+									 $("#wait_image_docProf").hide();
+									 if (status!='success'){
+										$("#myerror_doctor_prof").html('Network Timeout. Please check your Internet connection...');
+										
+									 }
+									 else{	
+									 	var resultArray = data.replace('</START>','').replace('</END>','').split('<SYNCDATA>');	
+										
+											if (resultArray[0]=='FAILED'){
+														$("#myerror_doctor_prof").text(resultArray[1]);	
+														
+													}
+				else if (resultArray[0]=='SUCCESS'){	
+
+				var result_string=resultArray[1];
+
+
+
+               var farm_id =result_string.split('<fdfd>')[0]
+               var farm_name =result_string.split('<fdfd>')[1]
+               var route =result_string.split('<fdfd>')[2]
+               var latitude =result_string.split('<fdfd>')[3]
+               var longitude=result_string.split('<fdfd>')[4]
+               var image=result_string.split('<fdfd>')[5]
+               var farm_type =result_string.split('<fdfd>')[6]
+               var owner_name =result_string.split('<fdfd>')[7]
+               var address =result_string.split('<fdfd>')[8]
+               var medicine =result_string.split('<fdfd>')[9]
+               var manger_name =result_string.split('<fdfd>')[10]
+               var consultant_name =result_string.split('<fdfd>')[11]
+               var category =result_string.split('<fdfd>')[12]
+               var birds_animal =result_string.split('<fdfd>')[13]
+               var rearing_housing=result_string.split('<fdfd>')[14]
+
+
+               var feeding =result_string.split('<fdfd>')[15]
+               var watering =result_string.split('<fdfd>')[16]
+               var brooding =result_string.split('<fdfd>')[17]
+               var poandsSize =result_string.split('<fdfd>')[18]
+               var status =result_string.split('<fdfd>')[19]
+               var anniversary =result_string.split('<fdfd>')[20]
+               var dob=result_string.split('<fdfd>')[21]
+			   
+			   var mobile_no=result_string.split('<fdfd>')[22]
+			   
+			   //alert(category)
+			   if(farm_type=='POULTRY'){
+				   	$("#poultry_farm_id_text").val(farm_Id);
+					$("#addPName").val(farm_name)
+					$("#addPOName").val(owner_name)
+					$("#AddressP").val(address)
+					$("#addCDOBp").val(dob)
+					$("#anniversaryP").val(anniversary)
+					$("#chemist_medicine_p").val(medicine)
+					$("#managerP").val(manger_name)
+					$("#consultantP").val(consultant_name)
+					$("#birds_animal_p").val(birds_animal)
+
+
+					$("#addCCategoryP").val(category)
+					$("#feedingP").val(feeding)
+					$("#addPondsP").val(poandsSize)
+					//$("#tr_poultry").val(route)
+					
+					$("#MobileP").val(mobile_no)
+		
+					$.afui.loadContent("#poultry_page",true,true,'right'); 
+				   
+			   }
+			   
+			   if(farm_type=='CATTLE'){
+				   	$("#cattle_farm_id_text").val(farm_Id);
+					$("#farm_name").val(farm_name)
+					$("#owner_name").val(owner_name)
+					$("#address").val(address)
+					$("#add_dob").val(dob)
+					$("#add_anniversary").val(anniversary)
+					$("#che_medicine").val(medicine)
+					$("#farm_manager").val(manger_name)
+					$("#farm_consultant").val(consultant_name)
+					$("#catbirds_animal").val(birds_animal)
+					
+					$("#catCategory").val(category)
+					$("#cat_feeding").val(feeding)
+					$("#cat_ponds_bigha").val(poandsSize)
+					//$("#tr_cattle").val(route)
+					
+					$("#mobileC").val(mobile_no)
+					$.afui.loadContent("#cattle_page",true,true,'right'); 
+				   
+			   }
+			   
+												
+			   if(farm_type=='AQUA'){
+				   	$("#aqua_farm_id_text").val(farm_Id);
+					$("#addCNameA").val(farm_name)
+					$("#addAOName").val(owner_name)
+					$("#addressAq").val(address)
+					$("#addCDOBa").val(dob)
+					$("#anniversaryA").val(anniversary)
+					$("#chemist_medicine_a").val(medicine)
+					$("#managerA").val(manger_name)
+					$("#consultantA").val(consultant_name)
+					$("#birds_animal_a").val(birds_animal)
+					
+					$("#addCCategoryA").val(category)
+					$("#feedingA").val(feeding)
+					$("#addCPhoneA").val(poandsSize)
+					//$("#tr_aqua").val(route)
+					
+					$("#mobileA").val(mobile_no)
+					$.afui.loadContent("#aqua_page",true,true,'right'); 
+				   
+			   }											
+										
+
+												
+												
+											}
+									   }
+									   }
+							 });//end ajax
+							
+//							 
+//							
+								
+
+
+	$("#myerror_chemist_prof").html('' )
+	$("#wait_image_chemProf").hide();
+	
+	
+}
+
+
+ //Nazma Azam 2019-06-23 end
+
+
+
 
 
 
