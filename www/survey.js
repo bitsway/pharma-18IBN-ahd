@@ -484,6 +484,9 @@ function saved_Doc_set(i) {
 	if (v_with.split('|')[0]!=''){$("#v_with_AM").prop('checked', true);}
 	if (v_with.split('|')[1]!=''){$("#v_with_MPO").prop('checked', true)}
 	if (v_with.split('|')[2]!=''){$("#v_with_RSM").prop('checked', true);}
+	if (v_with.split('|')[3]!=''){$("#v_with_ATS").prop('checked', true);}
+	if (v_with.split('|')[4]!=''){$("#v_with_VTS").prop('checked', true);}
+	
 
 	if (v_shift='Morning'){$("#v_shift_M").prop('checked', true);}
 	if (v_shift='Evening'){$("#v_shift_E").prop('checked', true);}
@@ -2337,6 +2340,10 @@ localStorage.report_button_tr='<input type="submit" id="loginButton" onClick="s_
 														if (j==0){checkName='v_with_AM'}
 														if (j==1){checkName='v_with_RSM'}
 														if (j==2){checkName='v_with_MPO'}
+														if (j==3){checkName='v_with_ATS'}
+														if (j==4){checkName='v_with_VTS'}
+														
+														
 														with_whom=with_whom+'<td ><input type="checkbox" name="'+checkName+'" value="'+with_whomList[j]+'" id="'+checkName+'" >  <label for="'+checkName+'"><font style=" font-size:10px">'+with_whomList[j]+'</font></label></td>'
 															
 														}
@@ -7351,8 +7358,11 @@ function visitSubmit_doc(){
 	var v_with_MPO=$("input[name=v_with_MPO]:checked").val(); if (v_with_MPO==undefined){v_with_MPO=''}
 	var v_with_RSM=$("input[name=v_with_RSM]:checked").val(); if (v_with_RSM==undefined){v_with_RSM=''}
 	
+	var v_with_ATS=$("input[name=v_with_ATS]:checked").val(); if (v_with_ATS==undefined){v_with_ATS=''}
+	var v_with_VTS=$("input[name=v_with_VTS]:checked").val(); if (v_with_VTS==undefined){v_with_VTS=''}
+	
 	//alert (v_with_AM)
-	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM
+	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM+"|"+v_with_ATS+"|"+v_with_VTS
 	//v_with=v_withGet.replace('undefined')
 	//alert (v_with)
 	
@@ -7527,6 +7537,10 @@ function visitSubmit_doc(){
 														$("#v_with_AM").attr('checked', false);
 														$("#v_with_MPO").attr('checked', false);
 														$("#v_with_RSM").attr('checked', false);
+														
+														$("#v_with_ATS").attr('checked', false);
+														$("#v_with_VTS").attr('checked', false);
+														
 														
 														
 														
@@ -7792,8 +7806,12 @@ function cancellDocvisit(){
 	var v_with_AM=$("input[name=v_with_AM]:checked").val(); if (v_with_AM==undefined){v_with_AM=''}
 	var v_with_MPO=$("input[name=v_with_MPO]:checked").val(); if (v_with_MPO==undefined){v_with_MPO=''}
 	var v_with_RSM=$("input[name=v_with_RSM]:checked").val(); if (v_with_RSM==undefined){v_with_RSM=''}
+	
+	var v_with_ATS=$("input[name=v_with_ATS]:checked").val(); if (v_with_ATS==undefined){v_with_ATS=''}
+	var v_with_VTS=$("input[name=v_with_VTS]:checked").val(); if (v_with_VTS==undefined){v_with_VTS=''}
+	
 	//alert (v_with_AM)
-	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM
+	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM+"|"+v_with_ATS+"|"+v_with_VTS
 	//v_with=v_withGet.replace('undefined')
 	//alert (v_with)
 	if (lat=='' || lat==0 || longitude=='' || longitude==0 ){
@@ -7943,6 +7961,9 @@ function cancellDocvisit(){
 														$("#v_with_MPO").attr('checked', false);
 														$("#v_with_RSM").attr('checked', false);
 														
+														$("#v_with_ATS").attr('checked', false);
+														$("#v_with_VTS").attr('checked', false);
+														
 														
 														
 														$("#errorChkVSubmit_doc").html('');
@@ -8087,8 +8108,11 @@ function saveDocvisit(){
 	var v_with_AM=$("input[name=v_with_AM]:checked").val(); if (v_with_AM==undefined){v_with_AM=''}
 	var v_with_MPO=$("input[name=v_with_MPO]:checked").val(); if (v_with_MPO==undefined){v_with_MPO=''}
 	var v_with_RSM=$("input[name=v_with_RSM]:checked").val(); if (v_with_RSM==undefined){v_with_RSM=''}
+	
+	var v_with_ATS=$("input[name=v_with_ATS]:checked").val(); if (v_with_ATS==undefined){v_with_ATS=''}
+	var v_with_VTS=$("input[name=v_with_VTS]:checked").val(); if (v_with_VTS==undefined){v_with_VTS=''}
 	//alert (v_with_AM)
-	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM
+	var v_with=v_with_AM+"|"+v_with_MPO+"|"+v_with_RSM+"|"+v_with_ATS+"|"+v_with_VTS
 	var v_shift=$("input[name=v_shift]:checked").val();
 	if (lat=='' || lat==0 || longitude=='' || longitude==0 ){
 							
@@ -8215,6 +8239,9 @@ function saveDocvisit(){
 									$("#v_with_AM").attr('checked', false);
 									$("#v_with_MPO").attr('checked', false);
 									$("#v_with_RSM").attr('checked', false);
+									
+									$("#v_with_ATS").attr('checked', false);
+									$("#v_with_VTS").attr('checked', false);
 									
 									
 									$("#errorChkVSubmit_doc").html('Saved Successfully');
