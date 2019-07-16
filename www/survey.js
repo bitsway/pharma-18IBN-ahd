@@ -1531,7 +1531,7 @@ function check_user() {
 
 
 
-  // var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+//   var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
  var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  //alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
 	
@@ -10666,7 +10666,7 @@ function docProfileSubmit() {
 	
 	$("#doctor_prof").val(localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dCategory='+dCategory+'&dDist='+dDist+'&dThana='+dThana+'&dInhouseP='+dInhouseP)
 	//alert (localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dCategory='+dCategory+'&dDist='+dDist+'&dThana='+dThana)
-		$.ajax(localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dCategory='+dCategory+'&dDist='+dDist+'&dThana='+dThana,{
+		$.ajax(localStorage.report_url+'doc_info_submit?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode+'&route='+market_Id+'&docId='+visitDocId+'&dName='+dName+'&dSpaciality='+dSpaciality+'&dDegree='+dDegree+'&dDOB='+dDOB+'&dMDay='+dMDay+'&dMobile='+dMobile+'&dCAddress='+dCAddress+'&dCategory='+dCategory+'&dDist='+dDist+'&dThana='+dThana+'&dInhouseP='+dInhouseP,{
 
 								type: 'POST',
 								timeout: 30000,
