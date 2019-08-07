@@ -1533,6 +1533,7 @@ function check_user() {
 
  //  var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
  var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+ 
  //alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
 	
 	var user_id=$("#user_id").val();
@@ -1540,7 +1541,7 @@ function check_user() {
 	
 	user_id=$.trim(user_id);
 	
-	//alert (apipath_base_photo_dm)
+	alert (apipath_base_photo_dm)
 		//-----
 	
 	if (user_id=="" || user_id==undefined || user_pass=="" || user_pass==undefined){
