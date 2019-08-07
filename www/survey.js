@@ -1531,7 +1531,7 @@ function check_user() {
 
 
 
-//   var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+ //  var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
  var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  //alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
 	
@@ -1700,6 +1700,46 @@ function check_user() {
 													localStorage.prProductStr=resultArray[34]
 													localStorage.with_whom=resultArray[35]
 													localStorage.rx_show=resultArray[36]
+													localStorage.linkStr=resultArray[37]
+													
+													
+													//===============================================
+													var linkStrList = localStorage.linkStr.split('<rd>');							
+													var linkStr_combo=''
+													
+													for (var l=0; l < linkStrList.length; l++){
+														linkStrListArray = linkStrList[l].split('<fd>');
+														var pathName=linkStrListArray[0];
+														var path_value=linkStrListArray[1];
+														var check=linkStrListArray[2];
+														
+														if (check=='Check'){
+															//alert ('1')
+														 var linkPath="window.open('"+path_value+"cid="+localStorage.cid+"&rep_id="+localStorage.user_id+"&rep_pass="+localStorage.user_pass	+"', '_system');"
+														}
+														else{
+															//alert ('2')
+															 var linkPath="window.open('"+path_value+"', '_system');"
+														}
+														
+														//alert (linkPath);
+														if(path_value!=''){
+															linkStr_combo+='<li style="border-bottom-style:solid; border-color:#CBE4E4;border-bottom-width:thin"><table width="100%" border="0" id="order_tbl" cellpadding="0" cellspacing="0" style="border-radius:5px;"><tr><td><a href="#" onclick="'+linkPath+'">'+pathName+'</a></td></tr></table></li>';
+															
+															
+															}
+													}
+													
+																		
+													localStorage.linkStr_combo=linkStr_combo;	
+													//alert (localStorage.linkStr_combo)								
+													$('#page_link_lv').empty();
+													$('#page_link_lv').append(localStorage.linkStr_combo);									
+
+													
+													
+													
+													//================================================
 													//alert (localStorage.marketStrDoc)
 													
 													//alert (localStorage.menu)
@@ -14497,7 +14537,18 @@ function onFail_aquaImage(message) {
 
 
 
-
+function page_Link() {	
+	
+	
+						
+	//localStorage.linkStr_combo=linkStr_combo;	
+	//alert (localStorage.linkStr_combo)								
+	$('#page_link_lv').empty();
+	$('#page_link_lv').append(localStorage.linkStr_combo);	
+	
+	
+	$.afui.loadContent("#page_link",true,true,'right');
+}
 
 
   //Nazma Azam 2019-06-18 end
