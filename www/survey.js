@@ -1541,7 +1541,7 @@ function check_user() {
 	
 	user_id=$.trim(user_id);
 	
-	alert (apipath_base_photo_dm)
+	//alert (apipath_base_photo_dm)
 		//-----
 	
 	if (user_id=="" || user_id==undefined || user_pass=="" || user_pass==undefined){
