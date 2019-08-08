@@ -619,8 +619,16 @@ function page_inbox() {
 			//alert (localStorage.report_url+'infoInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode)
 			$.ajax(localStorage.report_url+'infoInbox?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
 
-								type: 'POST',
-								timeout: 30000,
+								headers: { 'Authorization' : 'token my-token' },
+								method: 'POST',
+								data:{
+								  "name": "new-repos",
+								  "description" : "New-repos",
+								  "auto_init": true, 
+								  "private": false,
+							
+								},
+								processData: false,
 								error: function(xhr) {
 								
 								$("#error_inbox").html('Network Timeout. Please check your Internet connection..');
