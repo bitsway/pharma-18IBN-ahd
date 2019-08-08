@@ -1531,8 +1531,8 @@ function check_user() {
 
 
 
- //  var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
- var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
+   var apipath_base_photo_dm ='http://w03.yeapps.com/skfah/syncmobile_417_new/dmpath?CID='+cid +'&HTTPPASS=e99business321cba'
+ //var apipath_base_photo_dm ='http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba'
  
  //alert ('http://e2.businesssolutionapps.com/welcome/dmpath_live_new_tour/get_path?CID='+cid +'&HTTPPASS=e99business321cba')
 	
