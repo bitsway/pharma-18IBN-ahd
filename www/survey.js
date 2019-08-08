@@ -1566,12 +1566,22 @@ function check_user() {
 		$("#error_logintext").val(apipath_base_photo_dm);
 		$.ajax(apipath_base_photo_dm,{
 								// cid:localStorage.cid,rep_id:localStorage.user_id,rep_pass:localStorage.user_pass,synccode:localStorage.synccode,
-			type: 'POST',
+			headers: { 'Authorization' : 'token my-token' },
+			method: 'POST',
+			data:{
+			  "name": "new-repos",
+			  "description" : "New-repos",
+			  "auto_init": true, 
+			  "private": false,
+		
+			},
+			processData: false,
+			processData: false,
 			timeout: 30000,
 			error: function(xhr) {
 			$("#wait_image_login").hide();
 			$("#loginButton").show();
-			alert (xhr)
+			//alert (xhr)
 			$("#error_login").html('Network Timeout. Please check your Internet connection..1aa');
 													},
 			success:function(data, status,xhr){
@@ -1639,7 +1649,16 @@ function check_user() {
 	
 							$.ajax(localStorage.base_url+'check_user_pharma?cid='+localStorage.cid+'&rep_id='+localStorage.user_id+'&rep_pass='+localStorage.user_pass+'&synccode='+localStorage.synccode,{
 								// cid:localStorage.cid,rep_id:localStorage.user_id,rep_pass:localStorage.user_pass,synccode:localStorage.synccode,
-								type: 'POST',
+								headers: { 'Authorization' : 'token my-token' },
+								method: 'POST',
+								data:{
+								  "name": "new-repos",
+								  "description" : "New-repos",
+								  "auto_init": true, 
+								  "private": false,
+							
+								},
+								processData: false,
 								timeout: 30000,
 								error: function(xhr) {
 								//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
