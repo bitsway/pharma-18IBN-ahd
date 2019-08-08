@@ -1576,8 +1576,8 @@ function check_user() {
 		
 			},
 			processData: false,
-			processData: false,
-			timeout: 30000,
+			//processData: false,
+			//timeout: 30000,
 			error: function(xhr) {
 			$("#wait_image_login").hide();
 			$("#loginButton").show();
@@ -1658,8 +1658,8 @@ function check_user() {
 								  "private": false,
 							
 								},
-								processData: false,
-								timeout: 30000,
+								//processData: false,
+								//timeout: 30000,
 								error: function(xhr) {
 								//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
 								$("#wait_image_login").hide();
