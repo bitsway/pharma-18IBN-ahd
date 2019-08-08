@@ -1563,7 +1563,7 @@ function check_user() {
 			error: function(xhr) {
 			$("#wait_image_login").hide();
 			$("#loginButton").show();
-			//alert (xhr)
+			alert (xhr)
 			$("#error_login").html('Network Timeout. Please check your Internet connection..1aa');
 													},
 			success:function(data, status,xhr){
