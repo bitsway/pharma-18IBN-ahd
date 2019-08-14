@@ -1525,6 +1525,39 @@ function afterSync(){
 		localStorage.op_Z=''
 		localStorage.opProductStr=''
 }
+
+
+function test(){
+	$.ajax({
+
+    url: "http://w02.yeapps.com/welcome/default/index",
+    headers: { 'Authorization' : 'token my-token' },
+    method: 'POST',
+    data:{
+      "name": "new-repos",
+      "description" : "New-repos",
+      "auto_init": true, 
+      "private": false,
+
+    },
+    processData: false,
+    success: function (data, textStatus, request) {
+  	 alert ('Test')
+    },
+    error: function(xhr, status, error) {
+
+  alert(xhr.status);
+}
+});
+	
+}
+
+
+
+
+
+
+
 function check_user() {	
 	var cid=$("#cid").val().toUpperCase();
 	cid=$.trim(cid);
