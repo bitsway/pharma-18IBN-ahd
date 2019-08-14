@@ -1546,7 +1546,7 @@ function test(){
     },
     error: function(xhr, status, error) {
 
-  alert(xhr.status);
+   alert ('Test1')
 }
 });
 	
